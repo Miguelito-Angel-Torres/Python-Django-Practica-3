@@ -1,0 +1,41 @@
+{% extends "./base.html" %}
+
+{% block title %}Gestion de Cursos{% endblock %}
+
+{% block body %}
+<div class="row">
+    <!--col-md-4 offset-md-4 para que tenga un espacio-->  
+    <div class="col-md-4 offset-md-4">
+        <h2>Edicion de Curso</h2>
+        <!--Buscamos en Bootstrap Para form buscar en card   {% csrf_token %} para que los usuarios no haga huevadas-->
+        <!--Readonly para que no sea modificable-->
+        <div class="card">
+            <div class="card-body">
+                <form action="/editarCurso/" method="post">{% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" id="txtCodigo" name="txtCodigo" class="form-control" placeholder="Codigo" 
+                        minlength="2" maxlength="12"  readonly value="{{curso.codigo}}">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtNombre" name="txtNombre" class="form-control" placeholder="Nombre" 
+                         maxlength="50"  value="{{curso.nombre}}">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtCreditos" name="txtCreditos" class="form-control" placeholder="Credito" 
+                        min="1" max="9" value={{curso.creditos}} >
+                    </div>
+                    <div class="form-group">
+                       <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                    </div>
+                    
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+    
+
+</div>
+{% endblock %}

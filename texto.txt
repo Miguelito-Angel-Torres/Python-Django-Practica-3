@@ -1,0 +1,4 @@
+#Primero crear el proyecto django-admin startproject Universidad
+# Creacion de Carpeta : md Aplicaciones entro de la carpeta cd Aplicaciones
+#Crear App adentro de la Carpeta django-admin startapp Academico
+
